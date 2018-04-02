@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <h1>{{ count }}</h1>
-    <button @click="increment">Add</button>
+    <h1>Edge of the Empire Bounty Generator</h1>
+    <h2>Click "Generate" to get a new bounty!</h2>
     <button @click="roll">Roll d20</button>
   </div>
 </template>
@@ -10,16 +10,10 @@
 export default {
   name: 'App',
   computed: {
-    count () {
-      return this.$store.state.count
-    }
   },
   methods: {
-    increment () {
-      return this.$store.commit('increment')
-    },
-    roll () {
-      return this.$store.commit('roll')
+    generate () {
+      return this.$store.commit('generate')
     }
   }
 }

@@ -750,3 +750,39 @@ const listingAgent = [
     }
   }
 ]
+
+/*
+
+  sumMods = (k, l, r) => k == 'modifier' ? l + r : r
+
+*/
+
+const makeIndexMap = (table) => {
+  let indexMap = []
+
+  for (let i = 0; i < table.length; i++) {
+    const row = table[i]
+    let numHits = (row.rangeMax - row.rangeMin) + 1
+
+    while (numHits > 0) {
+      indexMap.push(i)
+      numHits--
+    }
+  }
+
+  return indexMap
+}
+
+const roll = (rng, table) => {
+  const indexMap = makeIndexMap(table)
+  const roll = rng.integer({min: 0, max: indexMap.length - 1})
+  const rollIndex = indexMap[roll]
+
+  return table[rollIndex].content
+}
+
+export default {
+  makeIndexMap,
+  roll,
+  listingAgent
+}

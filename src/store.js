@@ -1,4 +1,5 @@
 import Chance from 'chance'
+// import Tables from './tables'
 
 export default {
   state: {
@@ -6,8 +7,8 @@ export default {
     rng: new Chance()
   },
   mutations: {
-    increment: state => state.count++,
-    decrement: state => state.count--,
-    roll: state => { state.count = state.rng.d20() }
+    roll: state => {
+      state.count = state.rng.d20()
+    }
   }
 }
