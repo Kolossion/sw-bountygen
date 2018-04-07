@@ -4,43 +4,43 @@ const complication = [
   { rangeMin: 1,
     rangeMax: 50,
     content: {
-      compilation: 'None - Straightforward bounty'
+      complication: 'None - Straightforward bounty'
     }
   },
   { rangeMin: 51,
     rangeMax: 60,
     content: {
-      information: 'Already Dead - The target has already died or been incarcerated by other causes.'
+      complication: 'Already Dead - The target has already died or been incarcerated by other causes.'
     }
   },
   { rangeMin: 61,
     rangeMax: 70,
     content: {
-      information: 'Favored Prey - Several other bounty hunters are already on the trail.'
+      complication: 'Favored Prey - Several other bounty hunters are already on the trail.'
     }
   },
   { rangeMin: 71,
     rangeMax: 80,
     content: {
-      information: 'Covered Tracks - One or more pieces of information provided are out of date or incorrect.'
+      complication: 'Covered Tracks - One or more pieces of information provided are out of date or incorrect.'
     }
   },
   { rangeMin: 81,
     rangeMax: 90,
     content: {
-      information: 'Upgraded - The target had upgraded combat or escape capabilities.'
+      complication: 'Upgraded - The target had upgraded combat or escape capabilities.'
     }
   },
   { rangeMin: 91,
     rangeMax: 95,
     content: {
-      information: 'Swapped Target - The target is not the actual person or item looked for.'
+      complication: 'Swapped Target - The target is not the actual person or item looked for.'
     }
   },
   { rangeMin: 96,
     rangeMax: 100,
     content: {
-      information: 'It\'s a trap! - Bounty is entirely false and posted for nefarious reasons.'
+      complication: 'It\'s a trap! - Bounty is entirely false and posted for nefarious reasons.'
     }
   }
 ]
@@ -49,35 +49,35 @@ const informationLevel = [
   { rangeMin: 1,
     rangeMax: 10,
     content: {
-      information: 'Negligible',
+      information: 'Negligible (A photo and an alias, location at least 2 months old, etc.)',
       modifier: 10
     }
   },
   { rangeMin: 11,
     rangeMax: 50,
     content: {
-      information: 'Limited',
+      information: 'Limited (Verified real name, transponder code, location only 2 weeks old, etc.)',
       modifier: 5
     }
   },
   { rangeMin: 51,
     rangeMax: 80,
     content: {
-      information: 'Researched',
+      information: 'Researched (Compiled file including history, hangouts, profile, location 1 week old)',
       modifier: 0
     }
   },
   { rangeMin: 81,
     rangeMax: 90,
     content: {
-      information: 'Up-to-date',
+      information: 'Up-to-date (Compiled file including history, hangouts, profile, location 1 day old)',
       modifier: -5
     }
   },
   { rangeMin: 91,
     rangeMax: 100,
     content: {
-      information: 'Extensive',
+      information: 'Extensive (Compiled file including history, hangouts, profile, current location, and limited movement range)',
       modifier: -10
     }
   }
@@ -306,21 +306,21 @@ const returnCondition = {
     { rangeMin: 1,
       rangeMax: 25,
       content: {
-        reason: 'Undamaged and Unspoiled',
+        condition: 'Undamaged and Unspoiled',
         modifier: 2
       }
     },
     { rangeMin: 26,
       rangeMax: 95,
       content: {
-        reason: 'Alive/Recovered',
+        condition: 'Alive/Recovered',
         modifier: 0
       }
     },
     { rangeMin: 96,
       rangeMax: 100,
       content: {
-        reason: 'Dead or Alive',
+        condition: 'Dead or Alive',
         modifier: 0,
         deadOrAlive: true
       }
@@ -330,21 +330,21 @@ const returnCondition = {
     { rangeMin: 1,
       rangeMax: 15,
       content: {
-        reason: 'Undamaged and Unspoiled',
+        condition: 'Undamaged and Unspoiled',
         modifier: 2
       }
     },
     { rangeMin: 16,
       rangeMax: 50,
       content: {
-        reason: 'Alive/Recovered',
+        condition: 'Alive/Recovered',
         modifier: 0
       }
     },
     { rangeMin: 51,
       rangeMax: 85,
       content: {
-        reason: 'Dead or Alive',
+        condition: 'Dead or Alive',
         modifier: 0,
         deadOrAlive: true
       }
@@ -352,7 +352,7 @@ const returnCondition = {
     { rangeMin: 86,
       rangeMax: 100,
       content: {
-        reason: 'Dead/Destroyed',
+        condition: 'Dead/Destroyed',
         modifier: -3
       }
     }
@@ -361,21 +361,21 @@ const returnCondition = {
     { rangeMin: 1,
       rangeMax: 50,
       content: {
-        reason: 'Undamaged and Unspoiled',
+        condition: 'Undamaged and Unspoiled',
         modifier: 2
       }
     },
     { rangeMin: 51,
       rangeMax: 80,
       content: {
-        reason: 'Alive/Recovered',
+        condition: 'Alive/Recovered',
         modifier: 0
       }
     },
     { rangeMin: 81,
       rangeMax: 95,
       content: {
-        reason: 'Dead or Alive',
+        condition: 'Dead or Alive',
         modifier: 0,
         deadOrAlive: true
       }
@@ -383,7 +383,7 @@ const returnCondition = {
     { rangeMin: 96,
       rangeMax: 100,
       content: {
-        reason: 'Dead/Destroyed',
+        condition: 'Dead/Destroyed',
         modifier: -3
       }
     }
@@ -392,21 +392,21 @@ const returnCondition = {
     { rangeMin: 1,
       rangeMax: 25,
       content: {
-        reason: 'Undamaged and Unspoiled',
+        condition: 'Undamaged and Unspoiled',
         modifier: 2
       }
     },
     { rangeMin: 26,
       rangeMax: 50,
       content: {
-        reason: 'Alive/Recovered',
+        condition: 'Alive/Recovered',
         modifier: 0
       }
     },
     { rangeMin: 51,
       rangeMax: 75,
       content: {
-        reason: 'Dead or Alive',
+        condition: 'Dead or Alive',
         modifier: 0,
         deadOrAlive: true
       }
@@ -414,7 +414,7 @@ const returnCondition = {
     { rangeMin: 76,
       rangeMax: 100,
       content: {
-        reason: 'Dead/Destroyed',
+        condition: 'Dead/Destroyed',
         modifier: -3
       }
     }
@@ -423,21 +423,21 @@ const returnCondition = {
     { rangeMin: 1,
       rangeMax: 50,
       content: {
-        reason: 'Undamaged and Unspoiled',
+        condition: 'Undamaged and Unspoiled',
         modifier: 2
       }
     },
     { rangeMin: 51,
       rangeMax: 80,
       content: {
-        reason: 'Alive/Recovered',
+        condition: 'Alive/Recovered',
         modifier: 0
       }
     },
     { rangeMin: 81,
       rangeMax: 95,
       content: {
-        reason: 'Dead or Alive',
+        condition: 'Dead or Alive',
         modifier: 0,
         deadOrAlive: true
       }
@@ -445,7 +445,7 @@ const returnCondition = {
     { rangeMin: 96,
       rangeMax: 100,
       content: {
-        reason: 'Dead/Destroyed',
+        condition: 'Dead/Destroyed',
         modifier: -3
       }
     }
@@ -454,21 +454,21 @@ const returnCondition = {
     { rangeMin: 1,
       rangeMax: 15,
       content: {
-        reason: 'Undamaged and Unspoiled',
+        condition: 'Undamaged and Unspoiled',
         modifier: 2
       }
     },
     { rangeMin: 16,
       rangeMax: 75,
       content: {
-        reason: 'Alive/Recovered',
+        condition: 'Alive/Recovered',
         modifier: 0
       }
     },
     { rangeMin: 76,
       rangeMax: 95,
       content: {
-        reason: 'Dead or Alive',
+        condition: 'Dead or Alive',
         modifier: 0,
         deadModifier: -3
       }
@@ -476,7 +476,7 @@ const returnCondition = {
     { rangeMin: 96,
       rangeMax: 100,
       content: {
-        reason: 'Dead/Destroyed',
+        condition: 'Dead/Destroyed',
         modifier: -3
       }
     }
@@ -531,6 +531,7 @@ const bountyReason = {
       rangeMax: 30,
       content: {
         reason: 'Debt',
+        reasonCode: 'debt',
         modifier: 1
       }
     },
@@ -784,5 +785,11 @@ const roll = (rng, table) => {
 export default {
   makeIndexMap,
   roll,
-  listingAgent
+  listingAgent,
+  complication,
+  informationLevel,
+  bountyTarget,
+  bountyReason,
+  returnCondition,
+  threatLevel
 }
