@@ -5,7 +5,7 @@
     <h2>Click "Generate" to get a new bounty!</h2>
     <button @click="generate">Generate Bounty</button>
     <section v-if="bounty">
-      <h2>Bounty Posted By: {{ bounty.agent }}</h2>
+      <h2>Bounty Posted By this jerk: {{ bounty.agent }}</h2>
       <h3>
         Offering {{bounty.value}}Cr
         <span v-if="bounty.deadOrAlive">(or {{bounty.value - 3000}}Cr dead)</span>
