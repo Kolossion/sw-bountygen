@@ -19,7 +19,6 @@
       <p>Information Level - {{ bounty.information }}</p>
       <p>Complication - {{ bounty.complication }}</p>
     </section>
-
   </div>
 </template>
 
